@@ -544,3 +544,193 @@ body {
   .step-item { flex-direction: column; gap: 0.3rem; }
   .step-num { min-width: unset; }
 }
+
+/* ───────────── Form Page Specific Styles ───────────── */
+.form-page .container { max-width: 900px; }
+
+.form-container {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-header-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.65rem;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-bright);
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--purple);
+  background: rgba(180, 122, 255, 0.05);
+  outline: none;
+}
+
+/* Dosage Selection Radio Cards */
+.dosage-selection { margin-bottom: 2.5rem; }
+.dosage-selection h3 { font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-bright); }
+
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.radio-card { cursor: pointer; position: relative; }
+.radio-card input { position: absolute; opacity: 0; }
+
+.radio-content {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.radio-card input:checked + .radio-content {
+  border-color: var(--purple);
+  background: var(--purple-dim);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.radio-content .icon { font-size: 1.8rem; }
+.radio-content span:last-child { font-weight: 700; font-size: 0.85rem; }
+
+/* Weights Grid */
+.weights-section h3 { font-size: 1rem; margin-bottom: 1.2rem; color: var(--text-bright); }
+.weights-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.weight-input-box { position: relative; }
+.weight-input-box span {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.weight-input-box input {
+  width: 100%;
+  padding: 0.7rem 0.8rem 0.7rem 2.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--text-bright);
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* Results Display */
+.results-section {
+  background: rgba(180, 122, 255, 0.03);
+  border: 1px solid rgba(180, 122, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.result-card.main { text-align: center; }
+.result-card.main .label { font-family: var(--mono); font-size: 0.65rem; color: var(--text-dim); }
+.result-card.main .value { font-size: 2.2rem; font-weight: 800; color: var(--cyan); line-height: 1.2; }
+
+.limits-group { display: grid; gap: 0.75rem; }
+.limit-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.limit-label { font-size: 0.8rem; font-weight: 600; color: var(--text-bright); }
+.limit-range { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); }
+.count-val {
+  background: var(--purple);
+  color: white;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.count-val.fail { background: var(--red); }
+
+.verdict-card {
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 2px dashed var(--card-border);
+  transition: 0.3s;
+}
+
+.verdict-card.pass { border-color: var(--green); background: var(--green-dim); }
+.verdict-card.fail { border-color: var(--red); background: var(--red-dim); }
+
+.verdict-label { font-family: var(--mono); font-size: 0.6rem; color: var(--text-dim); }
+.verdict-value { font-size: 1.4rem; font-weight: 900; color: var(--text-bright); margin: 0.2rem 0; }
+.verdict-desc { font-size: 0.75rem; color: var(--text-dim); }
+
+.form-actions { display: flex; gap: 1rem; justify-content: flex-end; margin-bottom: 2rem; }
+
+@media (max-width: 850px) {
+  .results-grid { grid-template-columns: 1fr; }
+  .weights-grid { grid-template-columns: repeat(2, 1fr); }
+  .radio-group { grid-template-columns: 1fr; }
+}
+
+@media print {
+  .bg-canvas, .navbar, .form-actions, .theme-toggle { display: none !important; }
+  .form-container { box-shadow: none !important; border: 1px solid #ddd !important; padding: 1rem !important; }
+  body { background: white !important; color: black !important; }
+}
+

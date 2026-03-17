@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UoW Calculator | Borang Ujian Keseragaman Berat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="form-page">
+    <div class="bg-grain"></div>
+    
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo"><i class="fas fa-arrow-left"></i> Kembali</a>
+            <div class="nav-title">Borang Ujian Keseragaman Berat</div>
+            <button class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <span id="themeTxt">Dark Mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="form-container reveal">
+            <!-- Form Header Info -->
+            <div class="form-header-grid">
+                <div class="input-group">
+                    <label for="sampleNo">No. Sampel</label>
+                    <input type="text" id="sampleNo" placeholder="Contoh: 2024090007">
+                </div>
+                <div class="input-group">
+                    <label for="balanceId">Alat Timbang</label>
+                    <input type="text" id="balanceId" placeholder="Contoh: MSA 225S-100-DA">
+                </div>
+                <div class="input-group">
+                    <label for="analystName">Penganalisis</label>
+                    <input type="text" id="analystName" placeholder="Nama Penganalisis">
+                </div>
+                <div class="input-group">
+                    <label for="testDate">Tarikh</label>
+                    <input type="date" id="testDate">
+                </div>
+            </div>
+
+            <!-- Dosage Form Selection -->
+            <div class="dosage-selection">
+                <h3>Bentuk Dos Sampel</h3>
+                <div class="radio-group">
+                    <label class="radio-card">
+                        <input type="radio" name="dosageType" value="tablet" checked>
+                        <div class="radio-content">
+                            <span class="icon">💊</span>
+                            <span>Tablet</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="dosageType" value="kapsul">
+                        <div class="radio-content">
+                            <span class="icon">💉</span>
+                            <span>Kapsul</span>
+                        </div>
+                    </label>
+                    <label class="radio-card">
+                        <input type="radio" name="dosageType" value="lozenges">
+                        <div class="radio-content">
+                            <span class="icon">🍬</span>
+                            <span>Lozenges</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Weights Input Table -->
+            <div class="weights-section">
+                <h3>Data Timbangan (Unit: gram)</h3>
+                <div class="weights-grid" id="weightsGrid">
+                    <!-- 20 inputs will be generated here -->
+                </div>
+            </div>
+
+            <!-- Calculations & Results -->
+            <div class="results-section">
+                <div class="results-grid">
+                    <div class="result-card main">
+                        <div class="label">Berat Purata</div>
+                        <div class="value" id="avgWeight">0.0000 g</div>
+                    </div>
+                    
+                    <div class="limits-group">
+                        <div class="limit-box">
+                            <div class="limit-label" id="limitLabel1">Had ± 5% / 10%</div>
+                            <div class="limit-range" id="limitRange1">-</div>
+                            <div class="limit-count">
+                                <span>Melebihi:</span>
+                                <span class="count-val" id="count1">0</span>
+                            </div>
+                        </div>
+                        <div class="limit-box">
+                            <div class="limit-label" id="limitLabel2">Had ± 10% / 20%</div>
+                            <div class="limit-range" id="limitRange2">-</div>
+                            <div class="limit-count">
+                                <span>Melebihi:</span>
+                                <span class="count-val" id="count2">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="verdict-card" id="verdictCard">
+                        <div class="verdict-label">Keputusan</div>
+                        <div class="verdict-value" id="verdictStatus">Sila Masuk Data</div>
+                        <div class="verdict-desc" id="verdictDesc">Kiraan akan bermula selepas data lengkap.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="btn btn-secondary" onclick="resetForm()"><i class="fas fa-undo"></i> Reset</button>
+                <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Cetak Laporan (PDF)</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+        <p>PKKK/UAT/002A · National Pharmaceutical Regulatory Agency (NPRA)</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form specific init
+        document.addEventListener('DOMContentLoaded', () => {
+            initForm();
+        });
+    </script>
+</body>
+</html>
