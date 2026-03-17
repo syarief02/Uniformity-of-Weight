@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uniformity of Weight Test — Comprehensive Guide | NPRA</title>
+<meta name="description" content="Comprehensive guide for Ujian Keseragaman Berat (Uniformity of Weight Test) based on NPRA SOP PKKK/300/UAT/037 and USP 43 &lt;2091&gt;. Covers tablets, capsules, lozenges procedures and acceptance criteria.">
+<link rel="icon" type="image/png" href="https://syariefazman.com/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-canvas"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+<div class="grid-overlay"></div>
+
+<div class="main">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <a href="https://syariefazman.com/lab/logam-berat" class="ctrl-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Logam Berat
+      </a>
+    </div>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+      <button class="ctrl-btn" onclick="toggleTheme()" id="themeBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <span id="themeTxt">Light Mode</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-org">🇲🇾 NPRA — Bahagian Regulatori Farmasi Negara</div><br>
+    <div class="hero-unit">Arahan Kerja · PKKK/300/UAT/037</div>
+    <h1>Ujian Keseragaman <span class="g">Berat</span></h1>
+    <div class="hero-sub">Uniformity of Weight Test — Comprehensive Guide</div>
+    <p class="hero-desc">
+      Step-by-step procedure guide based on NPRA's official SOP for uniformity of weight testing 
+      of pharmaceutical products. Covering uncoated tablets, coated tablets, hard capsules, soft capsules, 
+      and lozenges per USP 43 &lt;2091&gt;.
+    </p>
+    <div class="hero-badges">
+      <span class="hero-badge-pill">📄 PKKK/300/UAT/037</span>
+      <span class="hero-badge-pill">📘 USP 43 &lt;2091&gt;</span>
+      <span class="hero-badge-pill">🏛️ PKKK/200/UAT/002</span>
+      <span class="hero-badge-pill">📋 Terbitan 3, Semakan 1</span>
+    </div>
+  </div>
+
+  <!-- Section: Tujuan -->
+  <div class="section-label" id="tujuan">◈ 1. Tujuan (Purpose)</div>
+  <div class="content-card reveal">
+    <p>This work instruction (<em>Arahan Kerja</em>) serves as a translation of the <strong>Tatacara Pengujian Uniformity of Weight</strong> 
+    (Document No. PKKK/200/UAT/002). Where discrepancies exist between this work instruction and the test procedure, 
+    the test procedure shall be used as the primary reference.</p>
+    <div class="highlight-box">
+      <strong>💡 Key Objective:</strong> To determine whether traditional pharmaceutical products tested comply with the 
+      prescribed uniformity of weight requirements.
+    </div>
+  </div>
+
+  <!-- Section: Skop -->
+  <div class="section-label" id="skop">◈ 2. Skop (Scope)</div>
+  <div class="content-card reveal">
+    <p>This work instruction applies to the <strong>uniformity of weight test</strong> for traditional pharmaceutical products in the following dosage forms:</p>
+    <div class="scope-grid">
+      <div class="scope-item"><span class="scope-icon">💊</span><span>Tablet</span></div>
+      <div class="scope-item"><span class="scope-icon">💉</span><span>Kapsul (Capsule)</span></div>
+      <div class="scope-item"><span class="scope-icon">🍬</span><span>Lozenges</span></div>
+    </div>
+    <div class="highlight-box warn">
+      <strong>⚠️ Exclusion:</strong> This test is <strong>NOT</strong> applicable for products in pill (<em>pil</em>) and pastille (<em>pastilles</em>) dosage forms.
+    </div>
+  </div>
+
+  <!-- Section: Tanggungjawab -->
+  <div class="section-label" id="tanggungjawab">◈ 5. Tanggungjawab (Responsibilities)</div>
+  <div class="content-card reveal">
+    <div class="resp-grid">
+
+      <div class="resp-card">
+        <div class="resp-header">
+          <span class="resp-icon">👤</span>
+          <div class="resp-title">5.1 Ketua Seksyen</div>
+        </div>
+        <ul>
+          <li>Review investigation reports for samples that fail the uniformity of weight test</li>
+          <li>Endorse the decision for tests that do not pass</li>
+        </ul>
+      </div>
+
+      <div class="resp-card">
+        <div class="resp-header">
+          <span class="resp-icon">👨‍🔬</span>
+          <div class="resp-title">5.2 Ketua Unit / Responsible Officer</div>
+        </div>
+        <ul>
+          <li>Ensure this procedure is followed during uniformity of weight testing</li>
+          <li>Review investigation reports for samples that fail</li>
+          <li>Endorse pass/fail decisions</li>
+        </ul>
+      </div>
+
+      <div class="resp-card">
+        <div class="resp-header">
+          <span class="resp-icon">🔬</span>
+          <div class="resp-title">5.3 Pegawai Farmasi</div>
+        </div>
+        <ul>
+          <li>Supervise analyses conducted by Pegawai Farmasi and Penolong Pegawai Farmasi</li>
+          <li>Review test reports</li>
+          <li>Conduct investigations for out-of-specification samples and prepare reports for failed samples</li>
+        </ul>
+      </div>
+
+      <div class="resp-card">
+        <div class="resp-header">
+          <span class="resp-icon">🧪</span>
+          <div class="resp-title">5.4 Penolong Pegawai Farmasi U29</div>
+        </div>
+        <ul>
+          <li>Conduct the uniformity of weight test following the established procedure</li>
+          <li>Prepare the test report</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Section: Prosedur -->
+  <div class="section-label" id="prosedur">◈ 6. Prosedur (Procedure)</div>
+  
+  <div class="content-card reveal">
+    <div class="highlight-box">
+      <strong>📋 Pre-Test Requirement:</strong> Before conducting this test, ensure a minimum of <strong>20 tablets/capsules</strong> 
+      are available for testing. If insufficient, the sample shall be reported as <em>'Lulus'</em> (Pass) but with remarks 
+      noting <strong>"Ujian keseragaman berat tidak dapat dijalankan kerana sampel yang diterima tidak mencukupi"</strong>.
+    </div>
+  </div>
+
+  <div class="content-card reveal">
+    <h3 class="proc-title">General Requirements</h3>
+    <div class="step-list">
+      <div class="step-item">
+        <span class="step-num">6.1</span>
+        <span>Ensure the balance used has an appropriate minimum weight capacity for weighing 1 unit of sample.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">6.2</span>
+        <span>Use forceps when weighing the sample.</span>
+      </div>
+      <div class="step-item">
+        <span class="step-num">6.3</span>
+        <span>If the sample needs to be held by hand, use gloves.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.4 Uncoated Tablets / Film-Coated / Lozenges -->
+  <div class="proc-section reveal" id="proc-tablet">
+    <button class="proc-header" onclick="toggleSection(this)">
+      <div>
+        <span class="proc-icon">💊</span>
+        <span class="proc-name">6.4 Tablet Tak Bersalut / Bersalut Filem / Lozenges</span>
+        <span class="proc-sub">Uncoated Tablets, Film-Coated Tablets & Lozenges</span>
+      </div>
+      <span class="proc-chevron">▾</span>
+    </button>
+    <div class="proc-body">
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.4.1</span>
+          <span>Weigh each of <strong>20 randomly selected</strong> tablets/lozenges individually.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.4.2</span>
+          <span>Calculate the <strong>average weight</strong> and determine the acceptance limits (minimum and maximum) using the table and formula below.</span>
+        </div>
+      </div>
+
+      <!-- USP 43 Limits Table -->
+      <h4 class="table-title">USP 43 Acceptance Limits</h4>
+      <div class="table-wrapper">
+        <table class="limits-table">
+          <thead>
+            <tr>
+              <th>Average Weight</th>
+              <th>USP 43 Limit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&lt; 0.130 g</td>
+              <td>Not more than 2 tablets exceed <strong>±10%</strong> AND no tablet exceeds <strong>±20%</strong> of average weight</td>
+            </tr>
+            <tr>
+              <td>0.130 – 0.324 g</td>
+              <td>Not more than 2 tablets exceed <strong>±7.5%</strong> AND no tablet exceeds <strong>±15%</strong> of average weight</td>
+            </tr>
+            <tr>
+              <td>&gt; 0.324 g</td>
+              <td>Not more than 2 tablets exceed <strong>±5%</strong> AND no tablet exceeds <strong>±10%</strong> of average weight</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Formula -->
+      <div class="formula-box">
+        <div class="formula-title">📐 Limit Calculation Formula</div>
+        <div class="formula">
+          <div class="formula-line"><span class="formula-label">Minimum limit (h%)</span> = Average weight − (Average weight × h / 100)</div>
+          <div class="formula-line"><span class="formula-label">Maximum limit (h%)</span> = Average weight + (Average weight × h / 100)</div>
+        </div>
+        <div class="formula-example">
+          <strong>Example (h = 10%):</strong><br>
+          Minimum = Average weight − (Average weight × 10/100)<br>
+          Maximum = Average weight + (Average weight × 10/100)
+        </div>
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.4.3</span>
+          <span>Based on the limits obtained, calculate the minimum and maximum values as per the formula above.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.4.4</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002A</strong>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.5 Coated Tablets -->
+  <div class="proc-section reveal" id="proc-coated">
+    <button class="proc-header" onclick="toggleSection(this)">
+      <div>
+        <span class="proc-icon">🧿</span>
+        <span class="proc-name">6.5 Tablet Bersalut (Selain Salut Filem)</span>
+        <span class="proc-sub">Coated Tablets (Non Film-Coated)</span>
+      </div>
+      <span class="proc-chevron">▾</span>
+    </button>
+    <div class="proc-body">
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.5.1</span>
+          <span>Weigh each of <strong>20 randomly selected</strong> coated tablets.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.2</span>
+          <span>Determine the acceptance limits using the table and formula in section 6.4.2 and 6.4.3.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.3</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002A</strong>.</span>
+        </div>
+      </div>
+
+      <div class="highlight-box warn">
+        <strong>⚠️ If Failed:</strong> Place 20 tablets into a beaker filled with water at <strong>37°C</strong> (use a dissolution apparatus to set the temperature).
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.5.4</span>
+          <span>If the test fails, place 20 tablets into a beaker with water at <strong>37°C</strong>.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.5</span>
+          <span>Stir the beaker gently for <strong>no more than 5 minutes</strong>. If the tablet coating has begun to dissolve, repeat this step for a shorter duration.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.6</span>
+          <span>Dry the tablets at <strong>50°C for 30 minutes</strong> in an oven.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.7</span>
+          <span>Weigh each of the 20 dried tablets.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.8</span>
+          <span>Determine the acceptance limits and calculate min/max as per sections 6.4.2 and 6.4.3.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.5.9</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002A</strong>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.6 Hard Capsules -->
+  <div class="proc-section reveal" id="proc-hard-capsule">
+    <button class="proc-header" onclick="toggleSection(this)">
+      <div>
+        <span class="proc-icon">💉</span>
+        <span class="proc-name">6.6 Kapsul Keras</span>
+        <span class="proc-sub">Hard Capsules — 3-Stage Testing</span>
+      </div>
+      <span class="proc-chevron">▾</span>
+    </button>
+    <div class="proc-body">
+
+      <!-- Stage 1 -->
+      <div class="stage-label">Stage 1 — Initial 20 Capsules</div>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.6.1</span>
+          <span>Weigh each of <strong>20 randomly selected</strong> capsules.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.6.2</span>
+          <span>Calculate the average weight. Acceptance limit: <strong>±10%</strong> (as per section 6.4.3).</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>USP Limit:</strong> No capsule shall exceed <strong>±10%</strong> of the average weight.
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.6.3</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002A</strong>.</span>
+        </div>
+      </div>
+
+      <!-- If Failed -->
+      <div class="stage-label warn-label">If Failed — Content Weight Verification</div>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.6.4</span>
+          <span>If the test fails, repeat the test by <strong>re-weighing all capsules</strong> individually. Ensure each capsule identity is tracked.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.6.5</span>
+          <span>Open each capsule, remove the contents, and clean the shell. Remove any adhering material from the shell.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.6.6</span>
+          <span>Weigh each <strong>empty shell</strong> individually.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.6.7</span>
+          <span>Calculate the <strong>content weight</strong> of each capsule: difference between the filled capsule weight and the empty shell weight.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.6.8</span>
+          <span>Calculate the average content weight. Acceptance limit: <strong>±10%</strong> and <strong>±25%</strong> (as per section 6.4.3).</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>USP Limit:</strong> Not more than <strong>2 capsules</strong> exceed ±10% AND no capsule exceeds ±25% of the average weight.
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.6.9</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002B</strong>.</span>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="stage-label">Stage 2 — Additional 40 Capsules (if 3–6 fail ±10%)</div>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.6.10</span>
+          <span>If <strong>3 to 6 capsules</strong> exceed ±10% and fall within the ±10–25% range, weigh an additional <strong>40 capsules</strong> following steps 6.6.5–6.6.7.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.6.11</span>
+          <span>Calculate the average content weight of all <strong>60 capsules</strong>. Acceptance limit: <strong>±10%</strong> and <strong>±25%</strong> (as per section 6.4.3).</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>USP Limit:</strong> Not more than <strong>6 capsules</strong> exceed ±10% AND no capsule exceeds ±25% of the average weight.
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.6.12</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002C</strong>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6.7 Soft Capsules -->
+  <div class="proc-section reveal" id="proc-soft-capsule">
+    <button class="proc-header" onclick="toggleSection(this)">
+      <div>
+        <span class="proc-icon">🔮</span>
+        <span class="proc-name">6.7 Kapsul Lembut</span>
+        <span class="proc-sub">Soft Capsules — 3-Stage Testing</span>
+      </div>
+      <span class="proc-chevron">▾</span>
+    </button>
+    <div class="proc-body">
+
+      <!-- Stage 1 -->
+      <div class="stage-label">Stage 1 — Initial 20 Capsules</div>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.7.1</span>
+          <span>Weigh each of <strong>20 randomly selected</strong> soft capsules.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.2</span>
+          <span>Calculate the average weight. Acceptance limit: <strong>±10%</strong> (as per section 6.4.3).</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>USP Limit:</strong> No capsule shall exceed <strong>±10%</strong> of the average weight.
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.7.3</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002A</strong>.</span>
+        </div>
+      </div>
+
+      <!-- If Failed -->
+      <div class="stage-label warn-label">If Failed — Content Weight Verification</div>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.7.4</span>
+          <span>If the test fails, repeat by <strong>re-weighing all capsules</strong> individually. Ensure each capsule identity is tracked.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.5</span>
+          <span>Inside a <strong>fume cupboard</strong>, cut each capsule open, remove the contents, and clean the shell with <strong>hexane</strong> solvent followed by <strong>acetone</strong>.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.6</span>
+          <span>Allow the solvent to evaporate from the shells for <strong>no more than 30 minutes</strong> inside the fume cupboard.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.7</span>
+          <span>Weigh each <strong>empty shell</strong> individually.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.8</span>
+          <span>Calculate the <strong>content weight</strong> of each capsule: difference between the filled capsule weight and the empty shell weight.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.9</span>
+          <span>Calculate the average content weight. Acceptance limit: <strong>±10%</strong> and <strong>±25%</strong> (as per section 6.4.3).</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>USP Limit:</strong> Not more than <strong>2 capsules</strong> exceed ±10% AND no capsule exceeds ±25% of the average weight.
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.7.10</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002B</strong>.</span>
+        </div>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="stage-label">Stage 2 — Additional 40 Capsules (if 3–6 fail ±10%)</div>
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.7.11</span>
+          <span>If <strong>3 to 6 capsules</strong> exceed ±10% and fall within the ±10–25% range, weigh an additional <strong>40 capsules</strong> following steps 6.7.5–6.7.8.</span>
+        </div>
+        <div class="step-item">
+          <span class="step-num">6.7.12</span>
+          <span>Calculate the average content weight of all <strong>60 capsules</strong>. Acceptance limit: <strong>±10%</strong> and <strong>±25%</strong> (as per section 6.4.3).</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <strong>USP Limit:</strong> Not more than <strong>6 capsules</strong> exceed ±10% AND no capsule exceeds ±25% of the average weight.
+      </div>
+
+      <div class="step-list">
+        <div class="step-item">
+          <span class="step-num">6.7.13</span>
+          <span>Record the test decision in form <strong>PKKK/UAT/002C</strong>.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Decision Flow -->
+  <div class="section-label" id="decision">◈ Decision Flow Summary</div>
+  <div class="content-card reveal">
+    <div class="flow-grid">
+      <div class="flow-card pass">
+        <div class="flow-icon">✅</div>
+        <div class="flow-title">LULUS (Pass)</div>
+        <ul>
+          <li><strong>Tablets:</strong> ≤2 units outside primary limit, none outside secondary limit</li>
+          <li><strong>Capsules (Stage 1):</strong> All within ±10%</li>
+          <li><strong>Capsules (Stage 2):</strong> ≤2 of 20 outside ±10%, none outside ±25%</li>
+          <li><strong>Capsules (Stage 3):</strong> ≤6 of 60 outside ±10%, none outside ±25%</li>
+        </ul>
+      </div>
+      <div class="flow-card fail">
+        <div class="flow-icon">❌</div>
+        <div class="flow-title">TIDAK LULUS (Fail)</div>
+        <ul>
+          <li><strong>Tablets:</strong> &gt;2 units outside primary limit OR any unit outside secondary limit</li>
+          <li><strong>Capsules:</strong> Any unit exceeds ±25% OR &gt;6 of 60 exceed ±10%</li>
+          <li>Report investigation and provide <em>laporan siasatan</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Rekod Kualiti -->
+  <div class="section-label" id="rekod">◈ 7. Rekod Kualiti (Quality Records)</div>
+  <div class="content-card reveal">
+    <div class="table-wrapper">
+      <table class="limits-table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Quality Record</th>
+            <th>Form No.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>7.1</td>
+            <td>Borang Ujian Keseragaman Berat</td>
+            <td><strong>PKKK/UAT/002A</strong></td>
+          </tr>
+          <tr>
+            <td>7.2</td>
+            <td>Borang Ujian Keseragaman Berat Kapsul (Isi Kapsul) — Peringkat Pertama</td>
+            <td><strong>PKKK/UAT/002B</strong></td>
+          </tr>
+          <tr>
+            <td>7.3</td>
+            <td>Borang Ujian Keseragaman Berat Kapsul (Isi Kapsul) — Peringkat Kedua</td>
+            <td><strong>PKKK/UAT/002C</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Section: Rujukan -->
+  <div class="section-label" id="rujukan">◈ Rujukan (References)</div>
+  <div class="content-card reveal">
+    <div class="ref-list">
+      <div class="ref-item">
+        <span class="ref-icon">📘</span>
+        <div>
+          <div class="ref-title">USP 43 &lt;2091&gt;</div>
+          <div class="ref-desc">Weight Variation in Dietary Supplements</div>
+        </div>
+      </div>
+      <div class="ref-item">
+        <span class="ref-icon">📄</span>
+        <div>
+          <div class="ref-title">PKKK/200/UAT/002</div>
+          <div class="ref-desc">Tatacara Uniformity of Weight</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Revision History -->
+  <div class="section-label" id="sejarah">◈ Sejarah Semakan (Revision History)</div>
+  <div class="content-card reveal">
+    <div class="table-wrapper">
+      <table class="limits-table">
+        <thead>
+          <tr>
+            <th>Edition</th>
+            <th>Rev.</th>
+            <th>Date</th>
+            <th>Key Changes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>15 Nov 2016</td>
+            <td>Initial release</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>10 Jul 2017</td>
+            <td>Updated by Nur Syazana Ahmad Nordin</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>0</td>
+            <td>10 Feb 2020</td>
+            <td>Updated effective date</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>15 Dec 2020</td>
+            <td>Updated responsibilities</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>0</td>
+            <td>1 Sep 2023</td>
+            <td>Updated document numbering to PKKK/300/UAT/037; reference to PKKK/200/UAT/002</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>1</td>
+            <td>15 Nov 2024</td>
+            <td>Updated institution name; reference from USP 35 to USP 43; updated responsibilities</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="approved-badge">
+      <span>🏛️</span> SISTEM KUALITI NPRA — APPROVED COPY
+    </div>
+  </div>
+
+  <div class="footer">Ujian Keseragaman Berat ◈ PKKK/300/UAT/037 ◈ NPRA Malaysia ◈ Syarief Azman</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
