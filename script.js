@@ -2,9 +2,9 @@
 function toggleTheme() {
   const html = document.documentElement;
   const current = html.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
   html.setAttribute('data-theme', next);
-  document.getElementById('themeTxt').textContent = next === 'dark' ? 'Light Mode' : 'Dark Mode';
+  document.getElementById('themeTxt').textContent = next === 'light' ? 'Dark Mode' : 'Light Mode';
   localStorage.setItem('uow-theme', next);
 }
 
@@ -14,7 +14,11 @@ function toggleTheme() {
   if (saved) {
     document.documentElement.setAttribute('data-theme', saved);
     const txt = document.getElementById('themeTxt');
-    if (txt) txt.textContent = saved === 'dark' ? 'Light Mode' : 'Dark Mode';
+    if (txt) txt.textContent = saved === 'light' ? 'Dark Mode' : 'Light Mode';
+  } else {
+    // Default is light, so button should say "Dark Mode"
+    const txt = document.getElementById('themeTxt');
+    if (txt) txt.textContent = 'Dark Mode';
   }
 })();
 
