@@ -103,10 +103,10 @@ function calculateResults() {
     // Note: For Capsules, Stage 1 (Initial 20) in some SOPs is fixed at 10%, 
     // but the reference to 6.4.3/6.4.2 in this SOP implies a tiered approach for traditional products.
     
-    if (avg <= 0.130) {
+    if (avg < 0.130) {
         limit1Percent = 10;
         limit2Percent = 20;
-    } else if (avg < 0.324) {
+    } else if (avg <= 0.324) {
         limit1Percent = 7.5;
         limit2Percent = 15;
     } else {
