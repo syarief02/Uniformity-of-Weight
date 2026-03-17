@@ -98,23 +98,29 @@ function calculateResults() {
 
     let limit1Percent, limit2Percent;
 
-    if (dosageType === 'kapsul') {
+    // Determine Tiers based on Average Weight (USP 43 / SOP PKKK/300/UAT/037)
+    // Thresholds: <= 130mg (10%), > 130mg & < 324mg (7.5%), >= 324mg (5%)
+    // Note: For Capsules, Stage 1 (Initial 20) in some SOPs is fixed at 10%, 
+    // but the reference to 6.4.3/6.4.2 in this SOP implies a tiered approach for traditional products.
+    
+    if (avg <= 0.130) {
         limit1Percent = 10;
-        limit2Percent = 10; // Kapsul only has one limit stage (10%)
-        document.getElementById('limitLabel1').textContent = 'Had ± 10%';
-        document.getElementById('limitLabel2').textContent = 'Had ± 10% (N/A)';
+        limit2Percent = 20;
+    } else if (avg < 0.324) {
+        limit1Percent = 7.5;
+        limit2Percent = 15;
     } else {
-        // Tablet / Lozenges (USP 43)
-        if (avg < 0.130) {
-            limit1Percent = 10;
-            limit2Percent = 20;
-        } else if (avg <= 0.324) {
-            limit1Percent = 7.5;
-            limit2Percent = 15;
-        } else {
-            limit1Percent = 5;
-            limit2Percent = 10;
-        }
+        limit1Percent = 5;
+        limit2Percent = 10;
+    }
+
+    if (dosageType === 'kapsul') {
+        // Many SOPs use 10% / 25% for capsule content (Stage 2)
+        // But if it says "as per 6.4.3", we use the tiered table for total weight.
+        // We will stick to tiers for consistency with "tablet should have 5% calculation too"
+        document.getElementById('limitLabel1').textContent = `Had ± ${limit1Percent}%`;
+        document.getElementById('limitLabel2').textContent = `Had ± ${limit2Percent}%`;
+    } else {
         document.getElementById('limitLabel1').textContent = `Had ± ${limit1Percent}%`;
         document.getElementById('limitLabel2').textContent = `Had ± ${limit2Percent}%`;
     }
@@ -131,6 +137,7 @@ function calculateResults() {
     let count2 = 0;
 
     weights.forEach(w => {
+        // Use a small epsilon for floating point comparison
         if (w < l1Min - 0.00001 || w > l1Max + 0.00001) count1++;
         if (w < l2Min - 0.00001 || w > l2Max + 0.00001) count2++;
     });
@@ -139,13 +146,11 @@ function calculateResults() {
     document.getElementById('count2').textContent = count2;
     
     // UI feedback for counts
-    if (dosageType === 'kapsul') {
-        document.getElementById('count1').className = 'count-val ' + (count1 > 0 ? 'fail' : '');
-        document.getElementById('count2').className = 'count-val';
-    } else {
-        document.getElementById('count1').className = 'count-val ' + (count1 > 2 ? 'fail' : '');
-        document.getElementById('count2').className = 'count-val ' + (count2 > 0 ? 'fail' : '');
-    }
+    // For both, we generally allow 2 at limit1 and none at limit2 (except capsule Stage 1 which is 'none' at 10%)
+    // However, the form is for Stage 1 (Initial 20).
+    // We'll highlight failure if more than 2 at L1 or any at L2.
+    document.getElementById('count1').className = 'count-val ' + (count1 > 2 ? 'fail' : '');
+    document.getElementById('count2').className = 'count-val ' + (count2 > 0 ? 'fail' : '');
 
     // Verdict Logic
     let isPass = false;
@@ -158,16 +163,21 @@ function calculateResults() {
     }
 
     if (dosageType === 'kapsul') {
+        // Stage 1 Capsules: None exceed the limit (usually 10%, but following tiers here)
         isPass = (count1 === 0);
-        verdictMsg = isPass ? 'Memenuhi kriteria USP 43 (Tiada > ±10%)' : 'GAGAL: Terdapat kapsul melebihi had ±10%';
+        if (isPass) {
+            verdictMsg = `LULUS: Tiada kapsul melebihi had ±${limit1Percent}%`;
+        } else {
+            verdictMsg = `GAGAL: Terdapat kapsul melebihi had ±${limit1Percent}% (Kriteria Peringkat 1)`;
+        }
     } else {
         isPass = (count1 <= 2 && count2 === 0);
         if (isPass) {
-            verdictMsg = 'Memenuhi kriteria USP 43';
+            verdictMsg = `LULUS: Memenuhi kriteria USP 43 (Had ±${limit1Percent}% & ±${limit2Percent}%)`;
         } else if (count2 > 0) {
-            verdictMsg = 'GAGAL: Terdapat tablet melebihi HAD KEDUA (±10%/15%/20%)';
+            verdictMsg = `GAGAL: Terdapat tablet melebihi HAD KEDUA (±${limit2Percent}%)`;
         } else {
-            verdictMsg = 'GAGAL: Lebih 2 tablet melebihi HAD PERTAMA (±5%/7.5%/10%)';
+            verdictMsg = `GAGAL: Lebih 2 tablet melebihi HAD PERTAMA (±${limit1Percent}%)`;
         }
     }
 
