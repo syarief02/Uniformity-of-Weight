@@ -562,9 +562,41 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--card-border);
+}
+
+.sop-reference {
+  margin-bottom: 2.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--purple-dim);
+  border: 1px solid rgba(180, 122, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.sop-reference span {
+  font-family: var(--mono);
+  font-weight: 700;
+  color: var(--purple);
+  font-size: 0.75rem;
+}
+
+.sop-link {
+  color: var(--text-bright);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+  border-bottom: 1px dashed var(--text-dim);
+}
+
+.sop-link:hover {
+  color: var(--cyan);
+  border-bottom-color: var(--cyan);
 }
 
 .input-group label {
